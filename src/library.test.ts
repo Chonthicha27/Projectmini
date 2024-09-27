@@ -8,9 +8,9 @@ describe('Library', () => {
     library = new Library();
   });
 
-  it('should add a book to the library', () => {
+  it('should add a book to the library', () => { //เรียกใช้ ฟังชั่นสมุดในarray
     const book = {
-      id: 1,
+      id: 1, 
       title: 'The Hobbit',
       author: 'J.R.R. Tolkien',
       genre: Genre.Fiction,
@@ -22,7 +22,7 @@ describe('Library', () => {
     expect(library.searchBooks('title', 'The Hobbit').length).toBe(1);
   });
 
-  it('should delete a book from the library', () => {
+  it('should delete a book from the library', () => { //ลบข้อมูล,ที่ส่งเข้าไปในarray
     const book = {
       id: 1,
       title: 'The Hobbit',
@@ -36,12 +36,10 @@ describe('Library', () => {
     library.deleteBook(1);
     expect(library.searchBooks('title', 'The Hobbit').length).toBe(0);
   });
-
-  // เพิ่มชุดทดสอบอื่นๆ เช่น การค้นหา การอัปเดตหนังสือ
-  // อัปเดตสถานะความพร้อมใช้งานของหนังสือ
-  it("",()=>{library.updateBook(1, { availability: false });
-  library.listBooks();
+  it("",()=>{
+    library.updateBook(1, { availability: false });//updateสมุด
+    library.listBooks();//แสดงสมุดทั้งหมดในarray
 
   })
-    // ตรวจสอบว่าหนังสือมีสถานะพร้อมใช้งานหรือไม่
+    
 });
