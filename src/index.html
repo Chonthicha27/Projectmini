@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการห้องสมุด</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ระบบจัดการห้องสมุด</h1>
+
+<div>
+    <button onclick="showAddBookForm()">เพิ่มหนังสือใหม่</button>
+    <button onclick="listBooks()">แสดงรายการหนังสือ</button>
+    <button onclick="searchBooks()">ค้นหาหนังสือ</button>
+    <button onclick="updateBook()">อัปเดตหนังสือ</button>
+    <button onclick="deleteBook()">ลบหนังสือ</button>
+    <button onclick="saveToJsonFile()">บันทึกลงไฟล์ JSON</button>
+</div>
+
+<div id="formContainer" style="display: none;">
+    <h2>เพิ่มหนังสือใหม่</h2>
+    <label for="title">ชื่อหนังสือ:</label>
+    <input type="text" id="title"><br>
+    <label for="author">ชื่อผู้เขียน:</label>
+    <input type="text" id="author"><br>
+    <label for="genre">ประเภทหนังสือ:</label>
+    <input type="text" id="genre"><br>
+    <label for="publishedYear">ปีที่ตีพิมพ์:</label>
+    <input type="number" id="publishedYear"><br>
+    <label for="availability">มีอยู่:</label>
+    <input type="checkbox" id="availability"><br>
+    <button onclick="addBook()">บันทึกหนังสือ</button>
+    <button onclick="hideAddBookForm()">ยกเลิก</button>
+</div>
+
+<div id="output"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
