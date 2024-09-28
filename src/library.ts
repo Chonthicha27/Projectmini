@@ -49,29 +49,39 @@ export class Library {
   private books: Book[] = [];
   private nextId: number = 1;
 
-  addBook(book: Omit<Book, 'id'>): Book {
+  addBook(book: Omit<Book, 'id'>): Book {//addBook ไปเก็บในarray
     const newBook = { ...book, id: this.nextId++ };
     this.books.push(newBook);
     return newBook;
   }
 
-  listBooks(): void {
+  listBooks(): void {//แสดงรายชื่อสมุดในarray
     this.books.forEach((book) => console.log(book));
   }
 
-  searchBooks<K extends keyof Book>(key: K, value: Book[K]): Book[] {
+  searchBooks<K extends keyof Book>(key: K, value: Book[K]): Book[] {//หาสมุดในarrayโดยใช้ property แล้วแทนที่ข้อมูลด้วยข้อมูลที่ส่งมา
     return this.books.filter((book) => book[key] === value);
   }
 
-  updateBook(id: number, updates: Partial<Omit<Book, 'id'>>): void {
+  updateBook(id: number, updates: Partial<Omit<Book, 'id'>>): void {// update สมุดโดยใช้ID
     const bookIndex = this.books.findIndex((book) => book.id === id);
     if (bookIndex !== -1) {
       this.books[bookIndex] = { ...this.books[bookIndex], ...updates };
     }
   }
 
-  deleteBook(id: number): void {
+  deleteBook(id: number): void {// ลบสมุดโดยใช้ID
     this.books = this.books.filter((book) => book.id !== id);
   }
 }
+
+// //เปิด terminalใน vscode
+// //npm install
+
+// //npx ts-node src/library.ts
+// //npx ts-node src/book.ts
+// //npx ts-node src/library.test.ts 
+// //npx ts-jest config:init
+// //npm install --save-dev jest ts-jest @types/jest
+// //npx jest
 

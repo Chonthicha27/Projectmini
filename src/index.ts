@@ -105,3 +105,7 @@ function save_to_Json_file() {
   }
 
 main();
+// ติดตั้งไฟล์ npm install readline-sync
+// npx tsc แปลงไฟล์   
+// ทำHTML
+// ทำ 1-7 test

@@ -1,0 +1,13 @@
+{
+  "books": [
+    {
+      "title": "GG",
+      "author": "HH",
+      "genre": "Fiction",
+      "publishedYear": 0,
+      "availability": false,
+      "id": 1
+    }
+  ],
+  "nextId": 2
+}
